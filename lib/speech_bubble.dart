@@ -28,6 +28,7 @@ class SpeechBubble extends StatelessWidget {
       this.height,
       this.width,
       this.padding,
+      this.elevation = 1.0,
       this.nipHeight = defaultNipHeight})
       : super(key: key);
 
@@ -55,6 +56,8 @@ class SpeechBubble extends StatelessWidget {
   /// The explicitly defined width of the [SpeechBubble].
   /// The [SpeechBubble] will defaultly enclose its [child].
   final double width;
+
+  final double elevation;
 
   /// The padding between the child and the edges of the [SpeechBubble].
   final EdgeInsetsGeometry padding;
@@ -118,7 +121,7 @@ class SpeechBubble extends StatelessWidget {
         Radius.circular(this.borderRadius),
       ),
       color: this.color,
-      elevation: 1.0,
+      elevation: this.elevation,
       child: Container(
         height: this.height,
         width: this.width,
